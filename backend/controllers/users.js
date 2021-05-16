@@ -4,6 +4,9 @@ const User = require('../models/user');
 const NotFoundError = require('../errors/not-found-err');
 const ValidationError = require('../errors/validation-err');
 const AuthorizationError = require('../errors/auth-err');
+require('dotenv').config();
+
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 module.exports.getUsers = (req, res, next) => {
   User.find({})
@@ -142,7 +145,7 @@ module.exports.login = (req, res, next) => {
     })
     .then((user) => {
       // создадим токен
-      const token = jwt.sign({ _id: user._id }, 'some-secret-key', { expiresIn: '7d' });
+      const token = jwt.sign({ _id: user._id }, NODE_ENV !== 'production' ? 'secret' : JWT_SECRET, { expiresIn: '7d' });
 
       // вернём токен
       res.send({ token });
