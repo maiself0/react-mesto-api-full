@@ -26,15 +26,22 @@ function App() {
   const history = useHistory();
   const [userEmail, setUserEmail] = useState("");
 
-  useEffect(() => {
+
+  function getUserAndCards() {
     api
       .getUserInfoAndInitialCards()
       .then(([userInfo, cards]) => {
         setCurrentUser(userInfo);
         setCards(cards);
+        console.log(userInfo);
       })
-      .catch((err) => console.log(err));
-  }, [loggedIn]);
+      .catch((err) => console.log(err))
+  }
+
+
+  useEffect(() => {
+    getUserAndCards();
+  }, []);
 
   function handleAddPlaceClick() {
     setAddPlacePopupOpen(!isAddPlacePopupOpen);
@@ -122,9 +129,10 @@ function App() {
       .authorize(password, email)
       .then((data) => {
         if (data) {
-          setLoggedIn(true);
           history.push("/");
-          setUserEmail(email)
+          setLoggedIn(true);
+          setUserEmail(email);
+          getUserAndCards();
         } 
       })
       .catch((err) => console.log(err));
