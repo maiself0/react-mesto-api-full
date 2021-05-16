@@ -1,0 +1,9 @@
+
+.register__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 69.166666666666666666666666666667vh;
+  width: 27.96875vw;
+}

@@ -1,0 +1,12 @@
+.popup__image {
+  max-height: 40vw;
+  box-sizing: border-box;
+  max-width: 60vw;
+}
+
+@media all and (max-width:320px) {
+  .popup__image {
+    padding: 0;
+    max-width: 240px;
+  }
+}

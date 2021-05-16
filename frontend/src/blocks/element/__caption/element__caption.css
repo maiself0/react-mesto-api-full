@@ -1,0 +1,13 @@
+.element__caption {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: #FFFFFF;
+  justify-content: space-between;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  align-items: center;
+  position: relative;
+  max-width: 282px;
+  min-height: 79px;
+}
+

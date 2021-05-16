@@ -1,0 +1,14 @@
+.popup__container_image {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+@media all and (max-width:620px) {
+  .popup__container_image {
+    padding: 0;
+    margin: 19px;
+  }
+}

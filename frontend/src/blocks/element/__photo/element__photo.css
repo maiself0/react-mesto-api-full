@@ -1,0 +1,8 @@
+.element__photo {
+  display: block;
+  min-height: 282px;
+  max-height: 282px;
+  border-radius: 10px 10px 0px 0px;
+  min-width: 282px;
+  background-size: cover;
+}

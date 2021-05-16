@@ -1,0 +1,13 @@
+.profile__name {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 9px;
+}
+
+@media all and (max-width:640px) {
+  .profile__name {
+    align-items: center;
+    padding-left: 25px;
+    margin-bottom: 0px;
+  } 
+}

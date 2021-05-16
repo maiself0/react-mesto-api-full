@@ -1,0 +1,13 @@
+.profile {
+  color: #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  min-height: 210px;
+  align-items: center;
+}
+
+@media all and (max-width:640px) {
+  .profile {
+    flex-direction: column;
+  }
+}

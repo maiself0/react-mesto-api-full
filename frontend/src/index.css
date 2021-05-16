@@ -1,0 +1,85 @@
+@import url(./vendor/normalize.css);
+
+@import url(./vendor/fonts.css);
+@import url(./blocks/root/root.css);
+@import url(./blocks/page/page.css);
+@import url(./blocks/header/header.css);
+@import url(./blocks/header/__status/header__status.css);
+@import url(./blocks/header/__status-container/header__status-container.css);
+@import url(./blocks/header/__logo/header__logo.css);
+@import url(./blocks/header/__link/header__link.css);
+@import url(./blocks/header/link-out/header__link-out.css);
+
+
+@import url(./blocks/main/main.css);
+@import url(./blocks/profile/profile.css);
+@import url(./blocks/profile/__description/profile__description.css);
+
+@import url(./blocks/profile/__name/profile__name.css);
+@import url(./blocks/profile/__avatar/profile__avatar.css);
+
+@import url(./blocks/profile/__button-edit/profile__button-edit.css);
+
+@import url(./blocks/profile/__button-add/profile__button-add.css);
+
+@import url(./blocks/profile/__info/profile__info.css);
+@import url(./blocks/profile/__heading/profile__heading.css);
+@import url(./blocks/profile/__subheading/profile__subheading.css);
+
+@import url(./blocks/elements/elements.css);
+@import url(./blocks/element/element.css);
+@import url(./blocks/element/__photo/element__photo.css);
+@import url(./blocks/element/__caption/element__caption.css);
+@import url(./blocks/element/__heading/element__heading.css);
+@import url(./blocks/element/__like/element__like.css);
+@import url(./blocks/element/__like/_active/element__like_active.css);
+@import url(./blocks/element/__like-count/element__like-count.css);
+@import url(./blocks/element/__like-container/element__like-count.css);
+@import url(./blocks/element/__delete/element__delete.css);
+@import url(./blocks/element/__delete/element__delete_hidden.css);
+@import url(./blocks/element/__delete/element__delete_visible.css);
+
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/footer/__copyright/footer__copyright.css);
+
+
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/__form/popup__form.css);
+@import url(./blocks/popup/_opened/popup_opened.css);
+@import url(./blocks/popup/__container/popup__container.css);
+@import url(./blocks/popup/__button-close/popup__button-close.css);
+@import url(./blocks/popup/__heading/popup__heading.css);
+@import url(./blocks/popup/__input/popup__input.css);
+@import url(./blocks/popup/__input/_state_invalid/popup__input_state_invalid.css);
+@import url(./blocks/popup/__input/_text/popup__input_text_heading.css);
+@import url(./blocks/popup/__input/_text/popup__input_text_subheading.css);
+@import url(./blocks/popup/__button-submit/popup__button-submit.css);
+@import url(./blocks/popup/__button-submit/_invalid/popup__button-submit_invalid.css);
+@import url(./blocks/popup/__container/_image/popup__container_image.css);
+@import url(./blocks/popup/__image/popup__image.css);
+@import url(./blocks/popup/__caption/popup__caption.css);
+
+@import url(./blocks/error/error.css);
+
+@import url(./blocks/login/login.css);
+@import url(./blocks/login/__header/login__header.css);
+@import url(./blocks/login/__form/login__form.css);
+@import url(./blocks/login/__top-container/login__top-container.css);
+@import url(./blocks/login/__button/login__button.css);
+@import url(./blocks/login/__input/login__input.css);
+
+@import url(./blocks/register/register.css);
+@import url(./blocks/register/__bottom-container/register__bottom-container.css);
+@import url(./blocks/register/__button/register__button.css);
+@import url(./blocks/register/__form/register__form.css);
+@import url(./blocks/register/__header/register__header.css);
+@import url(./blocks/register/__input/register__input.css);
+@import url(./blocks/register/__link/register__link.css);
+@import url(./blocks/register/__top-container/register__top-container.css);
+
+
+
+@import url(./blocks/register-info/register-info.css);
+@import url(./blocks/register-info/__pic/register-info__pic.css);
+@import url(./blocks/register-info/__popup/register-info__popup.css);
+@import url(./blocks/register-info/__text/register-info__text.css);

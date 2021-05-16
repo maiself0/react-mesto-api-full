@@ -1,0 +1,22 @@
+
+.register__input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #CCCCCC;
+  background-color: transparent;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: block;
+  color: #CCCCCC;
+  height: 30px;
+  margin-top: 35px;
+}
+.register__input:focus {
+  background-color: transparent;
+}
+
+.register__input:active {
+  background-color: transparent;
+}

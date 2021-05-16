@@ -1,0 +1,14 @@
+.footer {
+  max-width: 880px;
+  margin: auto;
+  min-height: 144px;
+  display: flex;
+  align-items: center;
+}
+
+@media all and (max-width:640px) {
+  .footer {
+    min-height: 98px;
+    padding-left: 5.9375vw;
+  }
+}

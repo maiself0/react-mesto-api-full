@@ -1,0 +1,12 @@
+.register-info__popup {
+  position: relative;
+  border-radius: 10px;
+  background-color: #ffffff;
+  width: 430px;
+  height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+

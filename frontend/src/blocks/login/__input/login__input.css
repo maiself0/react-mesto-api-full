@@ -1,0 +1,21 @@
+.login__input {
+  margin-top: 35px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #CCCCCC;
+  background-color: transparent;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: block;
+  color: #CCCCCC;
+  height: 30px;
+}
+.login__input:focus {
+  background-color: transparent;
+}
+
+.login__input:active {
+  background-color: transparent;
+}

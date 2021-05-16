@@ -1,0 +1,25 @@
+.profile__heading {
+  margin: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 1.14;
+  color: #FFFFFF;
+  margin-right: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 333px;
+}
+
+@media all and (max-width:700px) {
+  .profile__heading {
+    font-size: 27px;
+    line-height: 33px;
+    text-align: center;
+    align-self: center;
+    color: #FFFFFF;
+    margin-right: 10px;
+    max-width: 215px;
+  }
+}

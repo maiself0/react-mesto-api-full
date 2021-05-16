@@ -1,0 +1,30 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\practice"
+		},
+		{
+			"path": "..\\..\\02 russian-travel"
+		},
+		{
+			"path": "..\\..\\03 mesto"
+		},
+		{
+			"path": "..\\..\\04 mesto-react"
+		},
+		{
+			"path": "..\\..\\01 how-to-learn"
+		},
+		{
+			"path": "..\\..\\05 mesto-react-auth"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true,
+		"liveServer.settings.multiRootWorkspaceName": "practice",
+		"liveServer.settings.port": 5531
+	}
+}

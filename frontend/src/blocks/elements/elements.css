@@ -1,0 +1,28 @@
+.elements {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(auto, 282px));
+  grid-template-rows: repeat(auto, 361px);
+  grid-gap: 20px 17px;
+}
+
+@media all and (max-width:640px) {
+  .elements {
+    padding-top: 36px;
+    grid-template-columns: repeat(2, minmax(auto, 282px));
+    grid-template-rows: repeat(auto, minmax(auto, 361px));
+    padding-left: 5.9375vw;
+    padding-right: 5.9375vw;
+  }
+}
+
+
+@media all and (max-width:500px) {
+  .elements {
+    padding-top: 36px;
+    grid-template-columns: 282px;
+    grid-template-rows: repeat(auto, auto);
+    grid-gap: none;
+    grid-row-gap: 20px;
+    justify-content: center;
+  }
+}
