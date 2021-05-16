@@ -25,6 +25,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(requestLogger); // подключаем логгер запросов
 
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 app.post('/signin', celebrate({
   body: Joi.object().keys({
     email: Joi.string().email().required(),
