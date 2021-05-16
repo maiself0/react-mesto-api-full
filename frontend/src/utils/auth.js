@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:3005';
+export const BASE_URL = 'http://api.bukhgolts.nomoredomains.icu';
 
 export const register = (password, email) => {
   return fetch(`${BASE_URL}/signup`, {
@@ -15,7 +15,6 @@ export const authorize = (password, email) => {
   return fetch(`${BASE_URL}/signin`, {
     method: "POST",
     headers: {
-
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ password, email }),
@@ -43,4 +42,5 @@ export const getContent = (token) => {
 }
 
 const checkResponse = (res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.statusText}`)
+
 

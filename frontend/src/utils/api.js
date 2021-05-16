@@ -81,12 +81,13 @@ class Api {
     }).then(onError);
   }
 }
+const jwt = localStorage.getItem("jwt");
 
 const api = new Api({
-  url:"http://localhost:3005",
+  url:"http://api.bukhgolts.nomoredomains.icu",
   headers: {
     "content-type": "application/json",
-    authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGEwYzFhNTgzMmRkNDVlNjQ1ODM5MDIiLCJpYXQiOjE2MjExNDkyMjEsImV4cCI6MTYyMTc1NDAyMX0.kGNQsocZBgF_vnQBiEVUrF5K137mXXRFudNlbIsh-uQ'
+    authorization: `Bearer ${jwt}`
   }
 }) 
 
