@@ -35,7 +35,7 @@ module.exports.getCurrentUser = (req, res, next) => {
   User.findById(req.user._id)
     .orFail(new NotFoundError('Пользователь по указанному _id не найден.'))
     .then((user) => res.send({
-      _id: user._id, name: user.name, about: user.about, avatar: user.avatar,
+      _id: user._id, name: user.name, about: user.about, avatar: user.avatar, email: user.email,
     }))
     .catch((err) => {
       if (err.name === 'CastError') {

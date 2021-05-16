@@ -13,14 +13,14 @@ class Api {
 
   //профиль
   getUserInfo() {
-    return fetch(`${this._url}cohort-20/users/me`, {
+    return fetch(`${this._url}/users/me`, {
       headers: this._headers
     }).then(onError);
   }
 
   //карточки
   getCardList() {
-    return fetch(`${this._url}cohort-20/cards`, {
+    return fetch(`${this._url}/cards`, {
       headers: this._headers
     }).then(onError);
   }
@@ -33,7 +33,7 @@ class Api {
 
   //добавить данные профиля на сервер
   setUserInfo(data) {
-    return fetch(`${this._url}cohort-20/users/me`, {
+    return fetch(`${this._url}/users/me`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify(data),
@@ -41,7 +41,7 @@ class Api {
   }
   //добавление новой карточки
   addCard(place) {
-    return fetch(`${this._url}cohort-20/cards`, {
+    return fetch(`${this._url}/cards`, {
       method: "POST",
       headers: this._headers,
       body: JSON.stringify(place),
@@ -49,21 +49,21 @@ class Api {
   }
 
   removeCard(id) {
-    return fetch(`${this._url}cohort-20/cards/${id}`, {
+    return fetch(`${this._url}/cards/${id}`, {
       method: "DELETE",
       headers: this._headers,
     }).then(onError);
   }
 
   addLike(id) {
-    return fetch(`${this._url}cohort-20/cards/likes/${id}`, {
+    return fetch(`${this._url}/cards/${id}/likes/`, {
       method: "PUT",
       headers: this._headers,
     }).then(onError);
   }
 
   removeLike(id) {
-    return fetch(`${this._url}cohort-20/cards/likes/${id}`, {
+    return fetch(`${this._url}/cards/${id}/likes/`, {
       method: "DELETE",
       headers: this._headers,
     }).then(onError);
@@ -74,7 +74,7 @@ class Api {
   }
 
   setUserAvatar(data) {
-    return fetch(`${this._url}cohort-20/users/me/avatar`, {
+    return fetch(`${this._url}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify(data),
@@ -83,10 +83,10 @@ class Api {
 }
 
 const api = new Api({
-  url:"https://mesto.nomoreparties.co/v1/",
+  url:"http://localhost:3005",
   headers: {
     "content-type": "application/json",
-    authorization: '35f0ed57-1593-40bb-bc35-702beba473b9'
+    authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGEwYzFhNTgzMmRkNDVlNjQ1ODM5MDIiLCJpYXQiOjE2MjExNDkyMjEsImV4cCI6MTYyMTc1NDAyMX0.kGNQsocZBgF_vnQBiEVUrF5K137mXXRFudNlbIsh-uQ'
   }
 }) 
 

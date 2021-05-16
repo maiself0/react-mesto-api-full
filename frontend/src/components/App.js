@@ -59,7 +59,7 @@ function App() {
   //поставить лайк карточке
   function handleCardLike(card) {
     // Снова проверяем, есть ли уже лайк на этой карточке
-    const isLiked = card.likes.some((i) => i._id === currentUser._id);
+    const isLiked = card.likes.some((i) => i === currentUser._id);
 
     // Отправляем запрос в API и получаем обновлённые данные карточки
     api
@@ -134,8 +134,6 @@ function App() {
     
   }, []);
 
-
-
   const [userEmail, setUserEmail] = useState("");
 
   function tokenCheck() {
@@ -145,10 +143,11 @@ function App() {
       const jwt = localStorage.getItem("jwt");
       // здесь будем проверять токен
       if (jwt) {
+
         // проверим токен
         auth.getContent(jwt).then((res) => {
           if (res) {
-            setUserEmail(res.data.email);
+            setUserEmail(res.email);
             // авторизуем пользователя
             setLoggedIn(true);
             history.push("/");
