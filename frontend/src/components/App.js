@@ -33,7 +33,6 @@ function App() {
       .then(([userInfo, cards]) => {
         setCurrentUser(userInfo);
         setCards(cards);
-        console.log(userInfo);
       })
       .catch((err) => console.log(err))
   }
