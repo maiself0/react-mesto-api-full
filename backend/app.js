@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+require('dotenv').config();
 const { celebrate, Joi, errors } = require('celebrate');
 const helmet = require('helmet');
 const cors = require('cors');
