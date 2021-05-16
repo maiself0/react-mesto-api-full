@@ -22,6 +22,9 @@ function App() {
   const [selectedCard, setSelectedCard] = useState(null ?? false);
   const [cards, setCards] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
+  const [loggedIn, setLoggedIn] = useState(false);
+  const history = useHistory();
+  const [userEmail, setUserEmail] = useState("");
 
   useEffect(() => {
     api
@@ -31,7 +34,7 @@ function App() {
         setCards(cards);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [loggedIn]);
 
   function handleAddPlaceClick() {
     setAddPlacePopupOpen(!isAddPlacePopupOpen);
@@ -113,8 +116,6 @@ function App() {
       .then(closeAllPopups())
       .catch((err) => console.log(err));
   }
-  const history = useHistory();
-  const [loggedIn, setLoggedIn] = useState(false);
 
   function handleLogin(password, email) {
     auth
@@ -133,8 +134,6 @@ function App() {
     tokenCheck();
     
   }, []);
-
-  const [userEmail, setUserEmail] = useState("");
 
   function tokenCheck() {
     // если у пользователя есть токен в localStorage,

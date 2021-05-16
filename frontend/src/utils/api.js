@@ -84,7 +84,7 @@ class Api {
 const jwt = localStorage.getItem("jwt");
 
 const api = new Api({
-  url:"http://api.bukhgolts.nomoredomains.icu",
+  url: "http://api.bukhgolts.nomoredomains.icu",
   headers: {
     "content-type": "application/json",
     authorization: `Bearer ${jwt}`
