@@ -13,14 +13,14 @@ class Api {
 
   //профиль
   getUserInfo() {
-    return fetch(`${this._url}/users/me`, {
+    return fetch(`${this._url}/users/me/`, {
       headers: this._headers
     }).then(onError);
   }
 
   //карточки
   getCardList() {
-    return fetch(`${this._url}/cards`, {
+    return fetch(`${this._url}/cards/`, {
       headers: this._headers
     }).then(onError);
   }
@@ -33,7 +33,7 @@ class Api {
 
   //добавить данные профиля на сервер
   setUserInfo(data) {
-    return fetch(`${this._url}/users/me`, {
+    return fetch(`${this._url}/users/me/`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify(data),
@@ -41,7 +41,7 @@ class Api {
   }
   //добавление новой карточки
   addCard(place) {
-    return fetch(`${this._url}/cards`, {
+    return fetch(`${this._url}/cards/`, {
       method: "POST",
       headers: this._headers,
       body: JSON.stringify(place),
@@ -49,7 +49,7 @@ class Api {
   }
 
   removeCard(id) {
-    return fetch(`${this._url}/cards/${id}`, {
+    return fetch(`${this._url}/cards/${id}/`, {
       method: "DELETE",
       headers: this._headers,
     }).then(onError);
@@ -74,7 +74,7 @@ class Api {
   }
 
   setUserAvatar(data) {
-    return fetch(`${this._url}/users/me/avatar`, {
+    return fetch(`${this._url}/users/me/avatar/`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify(data),
