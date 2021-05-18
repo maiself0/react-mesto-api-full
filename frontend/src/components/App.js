@@ -37,7 +37,6 @@ function App() {
       .catch((err) => console.log(err))
   }
 
-
   useEffect(() => {
     getUserAndCards();
   }, []);
@@ -131,15 +130,13 @@ function App() {
           history.push("/");
           setLoggedIn(true);
           setUserEmail(email);
-          getUserAndCards();
-        } 
+        }
       })
       .catch((err) => console.log(err));
   }
 
   useEffect(() => {
     tokenCheck();
-    
   }, []);
 
   function tokenCheck() {
