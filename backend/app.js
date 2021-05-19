@@ -53,10 +53,10 @@ app.use(celebrate({
   headers: Joi.object().keys({
     authorization: Joi.string(),
   }).unknown(true),
-}), auth);
+}));
 
-app.use('/users', require('./routes/users'));
-app.use('/cards', require('./routes/cards'));
+app.use('/users', auth, require('./routes/users'));
+app.use('/cards', auth, require('./routes/cards'));
 
 app.get('*', (req, res) => {
   res.status(404).send({ message: 'Запрашиваемый ресурс не найден' });
