@@ -13,12 +13,12 @@
     "url": "git+https://github.com/yandex-praktikum/express-mesto.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Stanislav Bukhgolts",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/yandex-praktikum/express-mesto/issues"
   },
-  "homepage": "https://github.com/yandex-praktikum/express-mesto#readme",
+  "homepage": "https://bukhgolts.nomoredomains.icu/",
   "devDependencies": {
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.1",
