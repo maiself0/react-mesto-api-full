@@ -1,6 +1,7 @@
 const Card = require('../models/card');
 const NotFoundError = require('../errors/not-found-err');
 const ValidationError = require('../errors/validation-err');
+const ForbiddenError = require('../errors/forbidden');
 
 module.exports.getCards = (req, res, next) => {
   Card.find({})
@@ -63,7 +64,7 @@ module.exports.deleteCard = (req, res, next) => {
       if (err.name === 'CastError') {
         throw new ValidationError('Переданы некорректные данные _id.');
       } else if (err.message === 'NoRights') {
-        res.status(403).send({ message: 'Недостаточно прав для удаления карточки.' });
+        throw new ForbiddenError('Недостаточно прав для удаления карточки.');
       }
       next(err);
     })

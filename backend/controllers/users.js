@@ -4,6 +4,7 @@ const User = require('../models/user');
 const NotFoundError = require('../errors/not-found-err');
 const ValidationError = require('../errors/validation-err');
 const AuthorizationError = require('../errors/auth-err');
+const ConflictingRequestError = require('../errors/conflicting-request');
 require('dotenv').config();
 
 const { NODE_ENV, JWT_SECRET } = process.env;
@@ -65,7 +66,7 @@ module.exports.createUser = (req, res, next) => {
         }))
         .catch((err) => {
           if (err.name === 'MongoError' && err.code === 11000) {
-            res.status(409).send({ message: 'Данный email уже есть в базе.' });
+            throw new ConflictingRequestError('Данный email уже есть в базе.');
           }
           if (err.name === 'ValidationError') {
             throw new ValidationError('Переданы некорректные данные при создании пользователя.');

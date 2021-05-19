@@ -7,6 +7,7 @@ const cors = require('cors');
 const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const NotFoundError = require('./errors/not-found-err');
 
 // Слушаем 3005 порт
 const { PORT = 3005 } = process.env;
@@ -58,12 +59,12 @@ app.use(celebrate({
 app.use('/users', auth, require('./routes/users'));
 app.use('/cards', auth, require('./routes/cards'));
 
-app.get('*', (req, res) => {
-  res.status(404).send({ message: 'Запрашиваемый ресурс не найден' });
+app.get('*', (next) => {
+  next(new NotFoundError('Запрашиваемый ресурс не найден'));
 });
 
-app.post('*', (req, res) => {
-  res.status(404).send({ message: 'Запрашиваемый ресурс не найден' });
+app.post('*', (next) => {
+  next(new NotFoundError('Запрашиваемый ресурс не найден'));
 });
 
 app.use(errorLogger); // подключаем логгер ошибок
