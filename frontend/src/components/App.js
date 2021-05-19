@@ -139,9 +139,7 @@ function App() {
       .catch((err) => console.log(err));
   }
 
-
-  const [isAuthChecking, setIsAuthChecking] = useState(true)
-
+  const [isAuthChecking, setIsAuthChecking] = useState(false)
 
   function handleLogin(password, email) {
     auth
