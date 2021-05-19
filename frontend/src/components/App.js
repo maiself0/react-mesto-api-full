@@ -236,7 +236,7 @@ function App() {
             <Login onLogin={handleLogin} />
           </Route>
 
-          <Route path="*">
+          <Route path="/*">
             {isLoggedIn ? <Redirect to="/" /> : <Redirect to="/sign-in" />}
           </Route>
         </Switch>
