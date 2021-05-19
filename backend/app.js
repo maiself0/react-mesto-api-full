@@ -63,8 +63,8 @@ app.get('*', (req, res, next) => {
   next(new NotFoundError('Запрашиваемый ресурс не найден'));
 });
 
-app.post('*', (req, res) => {
-  res.status(404).send({ message: 'Запрашиваемый ресурс не найден' });
+app.post('*', (req, res, next) => {
+  next(new NotFoundError('Запрашиваемый ресурс не найден'));
 });
 
 app.use(errorLogger); // подключаем логгер ошибок
