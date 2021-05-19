@@ -14,7 +14,8 @@ class Api {
   //профиль
   getUserInfo() {
     return fetch(`${this._url}/users/me/`, {
-      headers: this._headers
+      headers: this._headers,
+      authorization: `Bearer ${this._jwt}`
     }).then(onError);
   }
 
@@ -26,9 +27,9 @@ class Api {
   }
 
   //профиль + карточки
-  getUserInfoAndInitialCards() {
+/*   getUserInfoAndInitialCards() {
     return Promise.all([api.getUserInfo(), api.getCardList()])
-  }
+  } */
 
 
   //добавить данные профиля на сервер
@@ -81,14 +82,7 @@ class Api {
     }).then(onError);
   }
 }
-const jwt = localStorage.getItem("jwt");
 
-const api = new Api({
-  url: "https://api.bukhgolts.nomoredomains.icu",
-  headers: {
-    "content-type": "application/json",
-    authorization: `Bearer ${jwt}`
-  }
-}) 
 
-export default api;
+
+export default Api;

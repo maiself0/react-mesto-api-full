@@ -83,3 +83,5 @@
 @import url(./blocks/register-info/__pic/register-info__pic.css);
 @import url(./blocks/register-info/__popup/register-info__popup.css);
 @import url(./blocks/register-info/__text/register-info__text.css);
+
+@import url('./blocks/prelodaer/preloader.css');
