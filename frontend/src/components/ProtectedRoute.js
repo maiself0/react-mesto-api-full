@@ -10,7 +10,7 @@ const ProtectedRoute = ({isLoggedIn, path, children, isChecking}) => {
           <Preloader />
         </main>
       ) : (
-        isLoggedIn ? children : <Redirect to="/signin" />
+        isLoggedIn ? children : <Redirect to="/sign-in" />
       )}
     </Route>
 )}
