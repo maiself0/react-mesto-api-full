@@ -41,15 +41,15 @@ function App() {
         .getUserInfo()
         .then((userInfo) => {
           setCurrentUser(userInfo);
-      })
-      .catch((err) => console.log(err))
+        })
+        .catch((err) => console.log(err))
   
       api
         .getCardList()
         .then((cards) => {
           setCards(cards);
-      })
-      .catch((err) => console.log(err))
+        })
+        .catch((err) => console.log(err))
       }
       setJwt(localStorage.getItem("jwt"))
   }, [isLoggedIn, jwt]);
