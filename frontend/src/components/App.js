@@ -37,7 +37,7 @@ function App() {
   })
 
   useEffect(() => {
-    if (isLoggedIn) {
+    if (jwt) {
       api
         .getUserInfo()
         .then((userInfo) => {
