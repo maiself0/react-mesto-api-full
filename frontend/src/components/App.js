@@ -23,7 +23,7 @@ function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userEmail, setUserEmail] = useState('');
-  const [jwt, setJwt] = useState('')
+  const [jwt, setJwt] = useState(localStorage.getItem("jwt"))
   const history = useHistory();
 
 
@@ -39,20 +39,19 @@ function App() {
   useEffect(() => {
     if (jwt) {
       api
-        .getUserInfo()
-        .then((userInfo) => {
-          setCurrentUser(userInfo);
-        })
-        .catch((err) => console.log(err))
+      .getUserInfo()
+      .then((userInfo) => {
+        setCurrentUser(userInfo);
+      })
+      .catch((err) => console.log(err))
   
       api
-        .getCardList()
-        .then((cards) => {
-          setCards(cards);
-        })
-        .catch((err) => console.log(err))
-      }
-      setJwt(localStorage.getItem("jwt"))
+      .getCardList()
+      .then((cards) => {
+        setCards(cards);
+      })
+      .catch((err) => console.log(err))
+    }
   }, [isLoggedIn, jwt]);
 
   function handleAddPlaceClick() {
