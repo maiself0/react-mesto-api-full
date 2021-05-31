@@ -67,8 +67,6 @@ app.post('*', (req, res, next) => {
   next(new NotFoundError('Запрашиваемый ресурс не найден'));
 });
 
-app.use(errorLogger); // подключаем логгер ошибок
-
 app.use(errors());
 app.use((err, req, res, next) => {
   // если у ошибки нет статуса, выставляем 500
@@ -86,6 +84,7 @@ app.use((err, req, res, next) => {
   next();
 });
 
+app.use(errorLogger); // подключаем логгер ошибок
 app.listen(PORT, () => {
   // Если всё работает, консоль покажет, какой порт приложение слушает
   // console.log(`App listening on port ${PORT}`);

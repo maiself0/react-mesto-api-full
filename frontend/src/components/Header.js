@@ -4,9 +4,6 @@ import { useLocation, Link } from "react-router-dom";
 function Header(props) {
   const location = useLocation();
 
-
-
-
   function headerStatus() {
     if (location.pathname === "/") {
       return (
