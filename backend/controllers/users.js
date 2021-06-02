@@ -28,11 +28,11 @@ module.exports.getUser = (req, res, next) => {
     }))
     .catch((err) => {
       if (err.name === 'CastError') {
-        throw new ValidationError('Переданы некорректные данные _id пользователя.');
+        next(new ValidationError('Переданы некорректные данные _id пользователя.'));
+      } else {
+        next(err);
       }
-      next(err);
     })
-    .catch(next);
 };
 
 module.exports.getCurrentUser = (req, res, next) => {
@@ -43,11 +43,11 @@ module.exports.getCurrentUser = (req, res, next) => {
     }))
     .catch((err) => {
       if (err.name === 'CastError') {
-        throw new ValidationError('Переданы некорректные данные _id пользователя.');
+        next(new ValidationError('Переданы некорректные данные _id пользователя.'));
+      } else {
+        next(err);
       }
-      next(err);
     })
-    .catch(next);
 };
 
 module.exports.createUser = (req, res, next) => {
@@ -66,14 +66,14 @@ module.exports.createUser = (req, res, next) => {
         }))
         .catch((err) => {
           if (err.name === 'MongoError' && err.code === 11000) {
-            throw new ConflictingRequestError('Данный email уже есть в базе.');
+            next(new ConflictingRequestError('Данный email уже есть в базе.'));
           }
           if (err.name === 'ValidationError') {
-            throw new ValidationError('Переданы некорректные данные при создании пользователя.');
+            next(new ValidationError('Переданы некорректные данные при создании пользователя.'));
+          } else {
+            next(err);
           }
-          next(err);
         })
-        .catch(next);
     });
 };
 
@@ -91,13 +91,13 @@ module.exports.updateUser = (req, res, next) => {
     }))
     .catch((err) => {
       if (err.name === 'ValidationError') {
-        throw new ValidationError('Переданы некорректные данные при обновлении профиля.');
+        next(new ValidationError('Переданы некорректные данные при обновлении профиля.'));
       } else if (err.name === 'CastError') {
-        throw new ValidationError('Переданы некорректные данные _id профиля.');
+        next(new ValidationError('Переданы некорректные данные _id профиля.'));
+      } else {
+        next(err);
       }
-      next(err);
     })
-    .catch(next);
 };
 
 // обновляет аватар
@@ -115,13 +115,13 @@ module.exports.updateAvatar = (req, res, next) => {
     }))
     .catch((err) => {
       if (err.name === 'ValidationError') {
-        throw new ValidationError('Переданы некорректные данные при обновлении аватара пользователя.');
+        next(new ValidationError('Переданы некорректные данные при обновлении аватара пользователя.'));
       } else if (err.name === 'CastError') {
-        throw new ValidationError('Переданы некорректные данные _id профиля.');
+        next(new ValidationError('Переданы некорректные данные _id профиля.'));
+      } else {
+        next(err);
       }
-      next(err);
     })
-    .catch(next);
 };
 
 module.exports.login = (req, res, next) => {
@@ -152,7 +152,6 @@ module.exports.login = (req, res, next) => {
       res.send({ token });
     })
     .catch((err) => {
-      throw new AuthorizationError(err.message);
+      next(new AuthorizationError(err.message));
     })
-    .catch(next);
 };

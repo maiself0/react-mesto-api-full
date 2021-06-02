@@ -33,11 +33,11 @@ module.exports.createCard = (req, res, next) => {
     }))
     .catch((err) => {
       if (err.name === 'ValidationError') {
-        throw new ValidationError('Переданы некорректные данные при создании карточки.');
+        next(new ValidationError('Переданы некорректные данные при создании карточки.'));
+      } else {
+        next(err);
       }
-      next(err);
     })
-    .catch(next);
 };
 
 module.exports.deleteCard = (req, res, next) => {
@@ -62,13 +62,13 @@ module.exports.deleteCard = (req, res, next) => {
     })
     .catch((err) => {
       if (err.name === 'CastError') {
-        throw new ValidationError('Переданы некорректные данные _id.');
+        next(new ValidationError('Переданы некорректные данные _id.'));
       } else if (err.message === 'NoRights') {
-        throw new ForbiddenError('Недостаточно прав для удаления карточки.');
+        next(new ForbiddenError('Недостаточно прав для удаления карточки.'));
+      } else {
+        next(err);
       }
-      next(err);
     })
-    .catch(next);
 };
 
 // поставить лайк карточке
@@ -89,11 +89,11 @@ module.exports.likeCard = (req, res, next) => {
     }))
     .catch((err) => {
       if (err.name === 'CastError') {
-        throw new ValidationError('Переданы некорректные данные _id карточки для постановки лайка.');
+        next(new ValidationError('Переданы некорректные данные _id карточки для постановки лайка.'));
+      } else {
+        next(err);
       }
-      next(err);
     })
-    .catch(next);
 };
 
 // убрать лайк с карточки
@@ -114,9 +114,9 @@ module.exports.dislikeCard = (req, res, next) => {
     }))
     .catch((err) => {
       if (err.name === 'CastError') {
-        throw new ValidationError('Переданы некорректные данные _id карточки для снятии лайка.');
+        next(new ValidationError('Переданы некорректные данные _id карточки для снятии лайка.'));
+      } else {
+        next(err);
       }
-      next(err);
     })
-    .catch(next);
 };
