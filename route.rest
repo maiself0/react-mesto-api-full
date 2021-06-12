@@ -1,0 +1,72 @@
+GET http://localhost:3005/cards/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJiMzc1NzM0OTg0ZTQ4NjA3NTE3ZjMiLCJpYXQiOjE2MjI4ODIxNTgsImV4cCI6MTYyMzQ4Njk1OH0.3WW7HEWjqT1Mwyiwm1OehQOBNZNwRKZ69scIRixUKcY
+
+################################
+
+POST http://localhost:3005/signup/
+Content-Type: application/json
+
+{
+  "name": "jjj",
+  "email": "email1@mail.com",
+  "password": "password"
+}
+
+################################
+
+POST http://localhost:3005/signup/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJiMzc1NzM0OTg0ZTQ4NjA3NTE3ZjMiLCJpYXQiOjE2MjI4ODIxNTgsImV4cCI6MTYyMzQ4Njk1OH0.3WW7HEWjqT1Mwyiwm1OehQOBNZNwRKZ69scIRixUKcY
+{
+
+}
+
+################################
+POST http://localhost:3005/signin/
+Content-Type: application/json
+
+{
+  "email": "email1@mail.com",
+  "password": "password"
+}
+
+################################
+GET http://localhost:3000/users/me/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MDQ1NzI3NTU4YjI5ZjgxMWRjZmYiLCJpYXQiOjE2MjI3NDM2NTEsImV4cCI6MTYyMzM0ODQ1MX0.BmKxmdFr0X_uJuRcSCcUPmABqT97gQukeGtL3sbgrJg
+################################
+
+PATCH  http://localhost:3000/users/me/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MDQ1NzI3NTU4YjI5ZjgxMWRjZmYiLCJpYXQiOjE2MjI3NDM2NTEsImV4cCI6MTYyMzM0ODQ1MX0.BmKxmdFr0X_uJuRcSCcUPmABqT97gQukeGtL3sbgrJg
+
+{
+  "name": "ggg",
+  "email": "emai@mail99.com"
+}
+################################
+
+POST http://localhost:3000/movies/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MDQ1NzI3NTU4YjI5ZjgxMWRjZmYiLCJpYXQiOjE2MjI3NDM2NTEsImV4cCI6MTYyMzM0ODQ1MX0.BmKxmdFr0X_uJuRcSCcUPmABqT97gQukeGtL3sbgrJg
+
+{
+  "country": "USA",
+  "director": "John Mayer",
+  "duration": "130min",
+  "year": "2002",
+  "description": "a movie",
+  "image": "http://www.images.com/image",
+  "trailer": "http://www.trailers.com/traler",
+  "nameRU": "Рус",
+  "nameEN": "Rus",
+  "thumbnail": "http://www.thumbnail.com/1",
+  "movieId": "22222999"
+}
+
+
+################################
+GET http://localhost:3000/movies/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MDQ1NzI3NTU4YjI5ZjgxMWRjZmYiLCJpYXQiOjE2MjI3NDM2NTEsImV4cCI6MTYyMzM0ODQ1MX0.BmKxmdFr0X_uJuRcSCcUPmABqT97gQukeGtL3sbgrJg
